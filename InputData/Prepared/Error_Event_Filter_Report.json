@@ -1,0 +1,62 @@
+{
+  "source_rows": 4543,
+  "prepared_rows": 4543,
+  "all_source_rows_preserved": true,
+  "allowed_error_activities": [
+    "Turning & Milling",
+    "Round Grinding",
+    "Laser Marking",
+    "Lapping",
+    "Wire Cut",
+    "Flat Grinding"
+  ],
+  "error_event_key": [
+    "Process Step",
+    "Machine",
+    "End Time",
+    "Worker ID"
+  ],
+  "potential_error_rows": 2666,
+  "matchable_candidate_events": 2562,
+  "excluded_ambiguous_rows": 104,
+  "ambiguous_key_groups": 45,
+  "largest_ambiguous_group": 5,
+  "per_activity": {
+    "Turning & Milling": {
+      "potential_source_rows": 1272,
+      "matchable_candidate_events": 1264,
+      "excluded_ambiguous_rows": 8,
+      "ambiguous_key_groups": 4
+    },
+    "Round Grinding": {
+      "potential_source_rows": 631,
+      "matchable_candidate_events": 631,
+      "excluded_ambiguous_rows": 0,
+      "ambiguous_key_groups": 0
+    },
+    "Laser Marking": {
+      "potential_source_rows": 252,
+      "matchable_candidate_events": 235,
+      "excluded_ambiguous_rows": 17,
+      "ambiguous_key_groups": 8
+    },
+    "Lapping": {
+      "potential_source_rows": 370,
+      "matchable_candidate_events": 302,
+      "excluded_ambiguous_rows": 68,
+      "ambiguous_key_groups": 28
+    },
+    "Wire Cut": {
+      "potential_source_rows": 27,
+      "matchable_candidate_events": 27,
+      "excluded_ambiguous_rows": 0,
+      "ambiguous_key_groups": 0
+    },
+    "Flat Grinding": {
+      "potential_source_rows": 114,
+      "matchable_candidate_events": 103,
+      "excluded_ambiguous_rows": 11,
+      "ambiguous_key_groups": 5
+    }
+  }
+}
