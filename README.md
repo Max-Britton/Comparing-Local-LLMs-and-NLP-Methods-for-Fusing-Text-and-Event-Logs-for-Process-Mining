@@ -22,7 +22,7 @@ Process mining allows the discovery of business processes from event logs that h
 | `Models/` | BERT base models for the NLP baselines (Zenodo release) |
 | `Results/` | Results of the ten runs and the paper outputs |
 
-`Models/` and the per-run folders `Results/run_XX/` are not stored in this repository because of their size. They are part of the Zenodo release: **[Zenodo DOI – to be added]**. Copy them into the repository folder to use them.
+`Models/` and the per-run folders `Results/run_XX/` are not stored in this repository because of their size. They are part of the Zenodo release: (https://doi.org/10.5281/zenodo.23598045). Copy them into the repository folder to use them.
 
 ## Results
 
@@ -38,7 +38,6 @@ For each of the ten runs:
 
 `Results/Summary.csv` summarizes all runs: one row per component, method, prompt, training size, difficulty level and metric, with the value of each run, the mean and the standard deviation. It covers classification (accuracy, macro-F1, number of reports predicted per class, including Other), extraction (overall and per attribute), matching (accuracy, assigned, wrongly assigned and unassigned reports, assignments per matching level, incorrect extractions matched correctly), the complete pipeline for all combinations of classification and extraction/matching methods, and the runtime per report.
 
-`Results/Paper/` contains the tables and figures of the paper, generated from these files. Cells with lists or objects are stored as JSON. The settings of all runs are those in `Code/Config.py`.
 ## Installation
 
 Python 3.13 or 3.14:
