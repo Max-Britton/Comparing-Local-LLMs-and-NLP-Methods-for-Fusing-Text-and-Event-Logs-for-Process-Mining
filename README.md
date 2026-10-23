@@ -36,10 +36,9 @@ For each of the ten runs:
 | `Results/run_XX/models.csv` | Ollama models with digest, parameter size and quantization |
 | `Results/run_XX/training.csv` | Training settings, seed and selected epoch or hyperparameters of the baselines |
 
-`Results/Summary.csv` summarizes all runs: one row per component, method, prompt, training size, difficulty level and metric, with the value of each run, the mean and the standard deviation. It covers classification (accuracy, macro-F1, invalid answers, answers stopped by the length limit, number of reports predicted per class, including Other), extraction (overall and per attribute), matching (accuracy, assigned, wrongly assigned and unassigned reports, assignments per matching level, incorrect extractions matched correctly), the complete pipeline for all combinations of classification and extraction/matching methods, and the runtime per report. `best_prompt` marks the prompt of each LLM that is used in the paper.
+`Results/Summary.csv` summarizes all runs: one row per component, method, prompt, training size, difficulty level and metric, with the value of each run, the mean and the standard deviation. It covers classification (accuracy, macro-F1, number of reports predicted per class, including Other), extraction (overall and per attribute), matching (accuracy, assigned, wrongly assigned and unassigned reports, assignments per matching level, incorrect extractions matched correctly), the complete pipeline for all combinations of classification and extraction/matching methods, and the runtime per report.
 
-`Results/Paper/` contains the tables and figures of the paper, generated from these files. Cells with lists or objects are stored as JSON. The settings of all runs are those in `Code/Config.py`; the seed of the trained baselines is stored per run in `training.csv`.
-
+`Results/Paper/` contains the tables and figures of the paper, generated from these files. Cells with lists or objects are stored as JSON. The settings of all runs are those in `Code/Config.py`.
 ## Installation
 
 Python 3.13 or 3.14:
@@ -47,18 +46,6 @@ Python 3.13 or 3.14:
 ```sh
 pip install -r requirements.txt
 ```
-
-## Reproduce the paper results from the stored runs
-
-No GPU or LLM is needed. With the per-run folders from the Zenodo release in `Results/`:
-
-```sh
-python Code/MainCheck.py              # consistency check of all stored runs
-python Code/MainPaperResults.py       # tables and figures in Results/Paper/
-python Code/MainSummary.py            # Results/Summary.csv
-```
-
-`MainCheck.py` checks that every run contains a result for each method and evaluation report and that `run_XX.csv` agrees with the per-report results. The figures were created with matplotlib 3.11.2; other versions give minor visual differences.
 
 ## Run the experiment
 
