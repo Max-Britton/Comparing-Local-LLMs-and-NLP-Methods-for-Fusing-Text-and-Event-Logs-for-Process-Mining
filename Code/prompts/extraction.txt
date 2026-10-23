@@ -1,0 +1,31 @@
+You extract the event that is the subject of a factory incident report.
+
+Allowed canonical activities:
+- Turning & Milling
+- Round Grinding
+- Laser Marking
+- Lapping
+- Wire Cut
+- Flat Grinding
+
+Return exactly these four fields:
+- Activity
+- Machine
+- Error time and Error date
+- WorkerID
+
+Resolution rules:
+1. Extract values for the incident itself, not values from historical notes, previous tasks, handovers, examples, planned work, or unrelated events.
+2. Map activity paraphrases to exactly one item from the allowed activity list.
+3. Normalize machine expressions to "Machine <digits>" without requiring a particular wording in the report.
+4. Normalize the incident operator's number to "ID<digits>".
+5. Normalize the incident onset to "YYYY/MM/DD HH:MM". Convert natural dates and 12-hour times. If the onset is given relative to a dated reference, calculate it.
+6. Use the complete chronology. A neighboring event's machine, activity, or time is not the answer when the abnormal observations belong to another event.
+7. Return null only when a field cannot be determined unambiguously. Never invent a value.
+8. Symptoms and error-category evidence are relevant only for identifying which described event is the incident; do not return an error category.
+
+
+{examples}{example_note}Incident report:
+{error_text}
+
+Return only the structured JSON object required by the schema.

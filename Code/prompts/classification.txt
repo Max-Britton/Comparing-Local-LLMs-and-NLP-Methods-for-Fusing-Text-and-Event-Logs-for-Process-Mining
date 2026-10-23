@@ -1,0 +1,13 @@
+
+    You are an expert in classifying machine errors. Your task is to assign the correct category to the following error based only on the given list.
+
+    Choose exactly one category from the following list: [Air Pressure Error, Lubrication Deficiency, Power Outage, Part Misalignment, Clamping Error, Software Glitch, Cooling System Failure, Feed Path Error, Sensor Malfunction, Material Defect, Other]. Do NOT invent new categories.
+
+
+{examples}{example_note}    Error information: "{error_text}"
+
+    Provide your output in JSON format:
+    {
+      "Category": "..."
+    }
+    

@@ -1,0 +1,61 @@
+{
+  "extraction": {
+    "example_template": "Worked example — this is demonstration data, not the incident to extract:\nExample report:\n{report}\n\nCorrect example output:\n{answer}\n\n",
+    "zero_note": "Now extract the new incident below.\n\n",
+    "example_note": "Now apply the same resolution policy to the new incident below. Never copy values from the worked example.\n\n",
+    "examples": [
+      {
+        "report": "On 3 March 2012, I, badge 5-6-7-8, completed laser marking on Machine 2 before moving to Machine 6 for the scheduled round-grinding job at 06:10. The first pass remained stable. Twelve minutes after beginning that job, vibration increased and the contact pattern became uneven, so I stopped the current operation and inspected the workpiece.",
+        "answer": {
+          "Activity": "Round Grinding",
+          "Machine": "Machine 6",
+          "Error time and Error date": "2012/03/03 06:22",
+          "WorkerID": "ID5678"
+        }
+      },
+      {
+        "report": "Machine 4 was being used for Wire Cut when the wire stopped advancing through the part. The report concerns the run at 2031/06/18 14:25, operated under ID0826. The part stayed clamped while the wire repeatedly caught at the same point. I stopped the run and left the part in place for inspection.",
+        "answer": {
+          "Activity": "Wire Cut",
+          "Machine": "Machine 4",
+          "Error time and Error date": "2031/06/18 14:25",
+          "WorkerID": "ID0826"
+        }
+      },
+      {
+        "report": "I wrote this at the end of the shift under badge 7310. The problem was on the flat-grinding job at station three, operated by my colleague, badge zero four six two. It was 9:42 pm on 7 November 2031 when the surface began showing repeated bands. The earlier lapping job on Machine 1 under my own badge had finished without this problem.",
+        "answer": {
+          "Activity": "Flat Grinding",
+          "Machine": "Machine 3",
+          "Error time and Error date": "2031/11/07 21:42",
+          "WorkerID": "ID0462"
+        }
+      }
+    ]
+  },
+  "classification": {
+    "example_template": "    Example:\n    Error information: \"{report}\"\n\n    Expected Category:\n{answer}\n\n",
+    "zero_note": "    Classify the following error:\n\n",
+    "example_note": "    Now, classify the following error:\n\n",
+    "examples": [
+      {
+        "report": "During the Lapping process on Machine 1, an error occurred at 2012/02/14 09:38. My worker ID is ID4882. The machine ran normally at first, but as the process continued, the lapping pattern on the surface became noticeably uneven, with one side worn more than the other.  There were no alerts from the system, but the final part had a clear angular distortion. I stopped the process and informed the supervisor for correction.",
+        "answer": {
+          "Category": "Part Misalignment"
+        }
+      },
+      {
+        "report": "The return cylinder moved slowly and stopped halfway through its stroke. The panel remained on and the coolant stream stayed steady. At the same time, the gauge on the compressed-air line dropped below its usual range and hissed at the coupling. I paused the cycle because the next stroke would not complete.",
+        "answer": {
+          "Category": "Air Pressure Error"
+        }
+      },
+      {
+        "report": "Halfway through the cut the spindle coasted down, the coolant pump fell silent and the control screen went black together. Pressing the panel buttons did nothing. The overhead lights were still on. When the equipment supply was restored, the screen started from its boot screen and the unfinished cycle had to be recovered.",
+        "answer": {
+          "Category": "Power Outage"
+        }
+      }
+    ]
+  }
+}
