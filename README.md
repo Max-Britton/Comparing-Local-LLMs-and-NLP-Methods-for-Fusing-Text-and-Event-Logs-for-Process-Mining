@@ -92,7 +92,7 @@ python Code/MainPaperResults.py      # tables and figures of the paper
 python Code/MainSummary.py           # summary of all runs in Results/Summary.csv
 ```
 
-Each start of `MainBenchmark.py` computes one complete run and numbers it after the existing runs; to start from `run_01`, move the existing runs out of `Results/`. An interrupted run is resumed by starting the script again: until a run is complete, its intermediate data is kept in `Results/Arbeitsdaten/run_XX`. When benchmark and matching are complete, the result files are written, read back and checked, and the intermediate data is removed (`ARBEITSDATEN_BEHALTEN = True` in `Code/Config.py` keeps it). LLM answers and the training of the baselines can differ slightly between hardware and Ollama versions.
+Each start of `MainBenchmark.py` computes one complete run and numbers it after the existing runs; to start from `run_01`, move the existing runs out of `Results/`. An interrupted run is resumed by starting the script again: until a run is complete, its intermediate data is kept in `Results/Arbeitsdaten/run_XX`.
 
 ## Prompts
 
